@@ -1,4 +1,5 @@
-import Sidebar from '../components/Sidebar'
+import Sidebar from './Sidebar'
+import Header from './Header'
 import ChatScreen from '../components/ChatScreen'
 
 interface MainLayoutProps {
@@ -9,7 +10,8 @@ export default function MainLayout({ onLogout }: MainLayoutProps): React.JSX.Ele
   return (
     <div className="flex h-screen bg-gray-950">
       <Sidebar onLogout={onLogout} />
-      <main className="flex-1 overflow-hidden">
+      <main className="flex flex-1 flex-col overflow-hidden">
+        <Header />
         <ChatScreen />
       </main>
     </div>
